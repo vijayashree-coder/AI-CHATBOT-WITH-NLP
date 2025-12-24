@@ -59,7 +59,7 @@ Future scope:
 
 __4. Technologies Used__
  
-     | Technology   | Description             |
+|technology    | Description             |
 | ------------ | ----------------------- |
 | Python       | Backend programming     |
 | Flask        | Web framework           |
