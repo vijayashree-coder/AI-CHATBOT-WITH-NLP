@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume & Career Guidance Chatbot</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f8;
+            padding: 40px;
+        }
+        .container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            background: #eef;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Resume & Career Guidance Chatbot</h2>
+
+    <form method="POST">
+        <label>Degree</label>
+        <input type="text" name="degree" required>
+
+        <label>Skills (comma separated)</label>
+        <textarea name="skills" required></textarea>
+
+        <label>Career Interest</label>
+        <input type="text" name="interest" required>
+
+        <label>Experience Level</label>
+        <select name="experience">
+            <option>Fresher</option>
+            <option>Experienced</option>
+        </select>
+
+        <button type="submit">Get Guidance</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Career Guidance</h3>
+        <p><b>Recommended Role:</b> {{ result.role }}</p>
+        <p><b>Skills to Improve:</b> {{ result.missing }}</p>
+        <p><b>Resume Tip:</b> {{ result.tip }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
